@@ -17,7 +17,10 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :snippets
+  has_many :snippets,
+    class_name: "Snippet",
+    foreign_key: :author_id,
+    primary_key: :id
 
   after_initialize :ensure_session_token
 
