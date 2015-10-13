@@ -5,6 +5,7 @@
 - Likes
 - Taggings
 - Tags
+- Add uniqueness to session token
 
 ### Controllers
 Api::LikesController (create, destroy)
