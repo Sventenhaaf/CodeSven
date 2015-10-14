@@ -5,8 +5,7 @@ var SnippetItem = React.createClass({
     // debugger;
     return (
       <ul>
-        <li>Title: {title}</li>
-        <li>Body: {body}</li>
+        <li>{title}:&nbsp;&nbsp;&nbsp;<span className="code">{body}</span></li>
       </ul>
     )
   }
