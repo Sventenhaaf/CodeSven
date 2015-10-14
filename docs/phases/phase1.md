@@ -7,7 +7,7 @@
 
 ### Controllers
 * UsersController (create, new)
-* SnippetsController (create, new, destroy)
+* SessionsController (create, new, destroy)
 * Api::SnippetsController (create, destroy, index, show, update)
 
 ### Views

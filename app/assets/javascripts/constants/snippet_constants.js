@@ -1,0 +1,3 @@
+SnippetConstants = {
+  SNIPPETS_RECEIVED: "SNIPPETS_RECEIVED"
+};

@@ -1,13 +1,13 @@
 
-class Api::BenchesController < ApplicationController
+class Api::SnippetsController < ApplicationController
   def index
     @snippets = Snippet.all
   end
 
   def create
     @snippet = Snippet.new(snippet_params)
-    bench = Bench.create!(bench_params)
-    render json: bench
+    snippet = Snippet.create!(snippet_params)
+    render json: snippet
   end
 
   private

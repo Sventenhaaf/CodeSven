@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require flux
+//= require react
 //= require eventemitter
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require reactrouter.min.js
 //= require_tree .

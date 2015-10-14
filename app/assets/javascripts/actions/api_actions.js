@@ -6,4 +6,4 @@ ApiActions = {
       snippets: snippets
     });
   }
-}
+};
