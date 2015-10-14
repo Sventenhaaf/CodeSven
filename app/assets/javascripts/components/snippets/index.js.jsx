@@ -13,7 +13,7 @@ window.SnippetsIndex = React.createClass({
   },
 
   handleCreate: function(){
-
+    
   },
 
   render: function(){
