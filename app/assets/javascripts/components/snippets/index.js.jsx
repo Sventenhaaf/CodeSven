@@ -4,11 +4,16 @@ window.SnippetsIndex = React.createClass({
   },
 
   componentDidMount: function () {
-    // SnippetStore.addChangeListener(this._fetchChanged);
+    SnippetStore.addChangeListener(this._onChange);
     ApiUtil.fetchAllSnippets();
   },
 
+  _onChange: function () {
+    this.setState({ snippets: SnippetStore.all() });
+  },
+
   render: function(){
+    // debugger;
     return (
       <ul>All snippets index
         {this.state.snippets.map(function(snippet){

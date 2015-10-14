@@ -19,8 +19,10 @@
 <br>
 
   <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
-
-  <%= yield %>
+  
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

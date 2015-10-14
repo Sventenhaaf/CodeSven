@@ -5,7 +5,7 @@ window.Index = React.createClass({
       <div>
         <div className="snippets-index">
           In Overall index
-          <SnippetsIndex/>
+          <SnippetsIndex />
         </div>
 
       </div>

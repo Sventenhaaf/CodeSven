@@ -1,10 +1,12 @@
 var SnippetItem = React.createClass({
   render: function (){
-    var title = this.props.title;
+    var title = this.props.snippet.title;
+    var body = this.props.snippet.body;
+    // debugger;
     return (
       <ul>
         <li>Title: {title}</li>
-        <li>Body: this.props.body</li>
+        <li>Body: {body}</li>
       </ul>
     )
   }
