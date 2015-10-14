@@ -12,14 +12,22 @@ window.SnippetsIndex = React.createClass({
     this.setState({ snippets: SnippetStore.all() });
   },
 
+  handleCreate: function(){
+
+  },
+
   render: function(){
     // debugger;
     return (
-      <ul>All snippets index
-        {this.state.snippets.map(function(snippet){
-          return <SnippetItem snippet={snippet}/>
-        })}
-      </ul>
+      <div>
+        <ul>All snippets index
+          {this.state.snippets.map(function(snippet){
+            return <SnippetItem snippet={snippet}/>
+          })}
+        </ul>
+        <button onClick={this.handleCreate}>Create</button>
+      </div>
+
     );
   }
 });
