@@ -1,4 +1,4 @@
-var Snippet = React.createClass({
+var SnippetItem = React.createClass({
   render: function (){
     var title = this.props.title;
     return (

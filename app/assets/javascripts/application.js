@@ -12,6 +12,8 @@
 //
 //= require flux
 //= require react
+//= require react_ujs
+//= require components
 //= require eventemitter
 //= require jquery
 //= require jquery_ujs

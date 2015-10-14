@@ -26,7 +26,7 @@ Snippet.create!(
   )
 
 Snippet.create!(
-  title: "Cool Function",
+  title: "Cool Mascha Function",
   body: "var function(){ return 'Mascha'; }",
   author_id: User.all[2].id
   )

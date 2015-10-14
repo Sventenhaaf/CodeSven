@@ -4,6 +4,7 @@
   var _snippets = [];
 
   var resetSnippets = function(snippets){
+    // debugger;
     _snippets = snippets.slice(0);
   };
 
@@ -21,6 +22,7 @@
     },
 
     dispatcherID: AppDispatcher.register(function (payload) {
+      // debugger;
       switch(payload.actionType) {
         case SnippetConstants.SNIPPETS_RECEIVED:
           resetSnippets(payload.snippets);

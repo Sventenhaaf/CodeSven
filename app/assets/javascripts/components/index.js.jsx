@@ -4,9 +4,10 @@ window.Index = React.createClass({
     return(
       <div>
         <div className="snippets-index">
-          <SnippetsIndex />
+          In Overall index
+          <SnippetsIndex/>
         </div>
-        {this.props.children}
+
       </div>
     );
   }
