@@ -34,10 +34,11 @@ var SnippetCreate = React.createClass({
 
     var titleInputField;
       if (this.state.saveButtonClicked) {
-        titleInputField = <input type="text" className="form-control" placeholder="Snippet Title"></input>;
+        titleInputField = <TitleInput />;
       } else {
         titleInputField = null;
       }
+      
     return (
       <div className="container snippetcreator">
         <div className="row stretch-height">
