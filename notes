@@ -1,5 +1,10 @@
-…or create a new repository on the command line
+Played around with prettify, might need to redo this:
+- download prettify js and save locally in javascripts
+- require in application.js
+- download prettify css and save locally in styles
+- require in application.css
 
+Save Github:
 echo "# CodeSven" >> README.md
 git init
 git add README.md

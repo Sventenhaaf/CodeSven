@@ -5,9 +5,14 @@ class Api::SnippetsController < ApplicationController
   end
 
   def create
+
     @snippet = Snippet.new(snippet_params)
-    snippet = Snippet.create!(snippet_params)
-    render json: snippet
+    @snippet.author_id = current_user.id
+    if @snippet.save
+      render json: @snippet
+    else
+      flash[:errors] = @snippet.errors
+    end
   end
 
   private

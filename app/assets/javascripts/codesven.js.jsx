@@ -20,9 +20,13 @@ $(function () {
 
     render: function(){
       return (
-        <div>
-          <header><h1>Welcome to CodeSven</h1></header>
-          <button onClick={this.toggleView}>Toggle Browse / Create</button>
+        <div className="container">
+          <div className="container">
+            <h1 className="pull-left" >Welcome to CodeSven</h1>
+            <button className="pull-right" onClick={this.toggleView}><h1>Toggle Browse / Create</h1></button>
+          </div>
+          <br></br><br></br>
+
           {this.props.children}
         </div>
       );
