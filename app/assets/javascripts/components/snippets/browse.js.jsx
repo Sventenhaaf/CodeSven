@@ -1,4 +1,4 @@
-window.SnippetsIndex = React.createClass({
+var SnippetBrowse = React.createClass({
   getInitialState: function(){
     return { snippets: SnippetStore.all() };
   },
@@ -12,19 +12,16 @@ window.SnippetsIndex = React.createClass({
     this.setState({ snippets: SnippetStore.all() });
   },
 
-  handleCreate: function(){
+  render: function (){
 
-  },
-
-  render: function(){
-    // debugger;
     return (
-      <div>snippetsindex
-        <SnippetCreate />
-        <SnippetBrowse snippets={this.state.snippets}/>
-        <button onClick={this.handleCreate}>Create</button>
+      <div>
+        <ul>All snippets index
+          {this.state.snippets.map(function(snippet){
+            return <SnippetItem snippet={snippet}/>
+          })}
+        </ul>
       </div>
-
-    );
+    )
   }
-});
+})
