@@ -8,15 +8,17 @@ $(function () {
   var App = React.createClass({
 
     getInitialState: function(){
-      return {view: "create"};
+      return {view: "browse"};
     },
 
     toggleView: function(event){
       event.preventDefault();
       if (this.state.view === "create"){
+        this.props.history.pushState(null, "browse");
         this.setState({view: "browse"});
       }
       else {
+        this.props.history.pushState(null, "create");
         this.setState({view: "create"});
       }
       // debugger;
@@ -35,10 +37,12 @@ $(function () {
 
   React.render((
     <Router>
-      <Route path="/" component={App}>
-        <IndexRoute component={SnippetsIndex}/>
-        <Route path="createsnippet" component={SnippetCreate}/>
-        <Route path="snippetbrowse" component={SnippetBrowse}/>
+      <Route component={App}>
+        <Route component={MainView}>
+          <Route path="/" component={SnippetBrowse} />
+          <Route path="create" component={SnippetCreate} />
+          <Route path="browse" component={SnippetBrowse} />
+        </Route>
       </Route>
     </Router>
   ), root);
