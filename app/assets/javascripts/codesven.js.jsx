@@ -13,15 +13,9 @@ $(function () {
 
     toggleView: function(event){
       event.preventDefault();
-      if (this.state.view === "create"){
-        this.props.history.pushState(null, "browse");
-        this.setState({view: "browse"});
-      }
-      else {
-        this.props.history.pushState(null, "create");
-        this.setState({view: "create"});
-      }
-      // debugger;
+      var toggle = this.state.view === "create" ? "browse" : "create";
+      this.props.history.pushState(null, toggle);
+      this.setState({ view: toggle});
     },
 
     render: function(){
