@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require flux
 //= require react
 //= require react_ujs
@@ -19,4 +20,5 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require reactrouter.min.js
+//= require run_prettify.js
 //= require_tree .

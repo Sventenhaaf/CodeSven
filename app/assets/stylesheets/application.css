@@ -1,0 +1,7 @@
+/*
+    *= require_self
+    // notice I'm only requiring main.scss
+    *= require main
+    *= require desert
+    *= require custom
+*/
