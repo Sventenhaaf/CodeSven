@@ -13,10 +13,16 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     outline: 0 none;
 }
 
-p#resultCode {
-  background-color: cornflowerblue;
+#hide {
+  visibility: hidden;
+}
+
+pre#resultCode {
+  color: #cc6;
+  background-color: #222;
   border-color: #000;
-  height: 100px;
+  height: 94px;
+  border-color: #f00;
   border-radius: 5px;
   padding: 10px;
 }

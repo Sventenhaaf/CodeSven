@@ -1,6 +1,9 @@
 var SnippetCreate = React.createClass({
   getInitialState: function(){
-    return {result: "function(){ return 'hello world'};"};
+    return ({
+      result: "function(){ return 'hello world'};",
+      saveButtonClicked: false
+    });
   },
 
   runCode: function(){
@@ -9,9 +12,11 @@ var SnippetCreate = React.createClass({
   },
 
   saveCode: function(){
+    this.setState({saveButtonClicked: true});
     var title = this.makeid();
     var input = document.getElementById("codeInput").value;
     var data = {title: title, body: input};
+    // debugger;
     ApiUtil.saveSnippet(data);
     this.setState({result: ""});
     input = "";
@@ -26,13 +31,18 @@ var SnippetCreate = React.createClass({
     },
 
   render: function (){
-    var body = this.props.body || "function(){ return 'hello world'};";
-    // var title = this.props.title;
 
+    var titleInputField;
+      if (this.state.saveButtonClicked) {
+        titleInputField = <input type="text" className="form-control" placeholder="Snippet Title"></input>;
+      } else {
+        titleInputField = null;
+      }
     return (
       <div className="container snippetcreator">
         <div className="row stretch-height">
           <div className="col-md-6 stretch-height">
+            {titleInputField}
             <form className="form-horizontal">
               <div className="form-group">
                 <label for="codeInput" className="control-label">Type your code here</label>
@@ -44,7 +54,7 @@ var SnippetCreate = React.createClass({
           </div>
           <div className="col-md-6 stretch-height">
             <p className="resultTitle" ><strong >Result here</strong></p>
-            <p id="resultCode" className="prettify lang-js">{this.state.result}</p>
+            <pre id="resultCode" className="prettify lang-js">{this.state.result}</pre>
           </div>
         </div>
 
