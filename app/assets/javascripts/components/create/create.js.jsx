@@ -44,6 +44,7 @@ var SnippetCreate = React.createClass({
 
     return (
       <div className="container snippetcreator">
+        <MochiInput />
         <div className="row stretch-height">
           <div className="col-md-6 stretch-height">
             <button onClick={this.runCode} type="submit" className="btn btn-default">

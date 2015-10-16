@@ -11,6 +11,8 @@
 // about supported directives.
 //
 
+//= require MochiKit.js
+//= require interpreter.js
 //= require flux
 //= require react
 //= require react_ujs
@@ -18,6 +20,7 @@
 //= require eventemitter
 //= require jquery
 //= require bootstrap-sprockets
+
 //= require jquery_ujs
 //= require reactrouter.min.js
 //= require run_prettify.js
