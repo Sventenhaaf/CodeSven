@@ -20,6 +20,7 @@ var SnippetBrowse = React.createClass({
 
     return (
       <div>
+        <input type="text" className="form-control" placeholder="Snippet Title"></input>
         <ul>All snippets index
           {this.state.snippets.map(function(snippet){
             return <SnippetItem snippet={snippet}/>

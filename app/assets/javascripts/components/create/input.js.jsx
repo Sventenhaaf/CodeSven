@@ -37,8 +37,10 @@ var TitleInput = React.createClass({
       <form>
         <label for="snippetTitle">{this.state.errors}</label>
         <input id="snippetTitle" type="text" className="form-control" placeholder="Snippet Title"></input>
-        <button onClick={this.handleCancel} type="submit" className="btn btn-default">Cancel</button>
-        <button onClick={this.handleSave} type="submit" className="btn btn-default">Save Code</button>
+        <button onClick={this.handleCancel} type="submit" className="btn btn-default">
+          <span className="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Cancel</button>
+        <button onClick={this.handleSave} type="submit" className="btn btn-default">
+          <span className="glyphicon glyphicon-save" aria-hidden="true"></span> Save Code</button>
       </form>
 
     )

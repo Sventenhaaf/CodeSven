@@ -22,6 +22,7 @@
         <div className="container">
           <div className="container">
             <h1 className="pull-left" >Welcome to CodeSven</h1>
+            
             <button className="pull-right" onClick={this.toggleView}><h1>Toggle Browse / Create</h1></button>
           </div>
           <br></br><br></br>

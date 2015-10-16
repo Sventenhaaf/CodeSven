@@ -2,10 +2,13 @@ var SnippetItem = React.createClass({
   render: function (){
     var title = this.props.snippet.title;
     var body = this.props.snippet.body;
+    var author = this.props.snippet.author_id;
     return (
-      <ul>
-        <li>{title}:&nbsp;&nbsp;&nbsp;<span className="code">{body}</span></li>
-      </ul>
+      <div class="container">
+        <div>{title}</div>
+        <div><pre>{body}</pre></div>
+        <div>Written By: {author}</div>
+      </div>
     )
   }
 })
