@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    # debugger
     sign_out
-    redirect_to new_session_url
+    render json: "logged out"
   end
 end

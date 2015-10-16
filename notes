@@ -1,4 +1,4 @@
-- Navbar
+- Navbar - http://bensmithett.com/server-rendered-react-components-in-rails/
 - Style the Create page (with codemirror)
 - Showing Snippets and Search (and fix author_id problem if its still there) - slick
 - Add likes and tags
