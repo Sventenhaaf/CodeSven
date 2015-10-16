@@ -5,13 +5,16 @@ class Api::SnippetsController < ApplicationController
   end
 
   def create
-
-    @snippet = Snippet.new(snippet_params)
-    @snippet.author_id = current_user.id
-    if @snippet.save
-      render json: @snippet
+    if current_user
+      @snippet = Snippet.new(snippet_params)
+      @snippet.author_id = current_user.id
+      if @snippet.save
+        render json: @snippet
+      else
+        render json: "title or body were empty"
+      end
     else
-      flash[:errors] = @snippet.errors
+      render json: "not logged in"
     end
   end
 

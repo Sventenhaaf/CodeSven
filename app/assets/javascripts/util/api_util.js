@@ -8,11 +8,30 @@ window.ApiUtil = {
       });
     },
 
-  saveSnippet: function(data){
-    $.post('api/snippets', {snippet: data}, function(snippet) {
-      ApiActions.receiveAll([snippet]);
-    });
-  }
+    saveSnippet: function(data) {
+      $.ajax({
+        type: "POST",
+        url: "api/snippets",
+        data: {snippet: data},
+        success: function(snippet){
+          ApiActions.receiveAll([snippet]);
+        },
+        error: function(errorcode) {
+          ApiActions.handleSaveError([errorcode]);
+        }
+      });
+    },
+
+
+
+
+  // saveSnippet: function(data){
+  //
+  //   $.post('api/snippets', {snippet: data}, function(snippet) {
+  //     debugger;
+  //     ApiActions.receiveAll([snippet]);
+  //   });
+  // }
 };
 
 

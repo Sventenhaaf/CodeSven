@@ -8,6 +8,10 @@ var SnippetBrowse = React.createClass({
     ApiUtil.fetchAllSnippets();
   },
 
+  componentWillUnmount: function(){
+    SnippetStore.removeChangeListener(this._onChange);
+  },
+
   _onChange: function () {
     this.setState({ snippets: SnippetStore.all() });
   },

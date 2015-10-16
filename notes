@@ -1,3 +1,7 @@
+See slick for cool sliders between code http://kenwheeler.github.io/slick/
+
+Keep in mind CodeMirror for code editing
+
 Played around with prettify, might need to redo this:
 - download prettify js and save locally in javascripts
 - require in application.js

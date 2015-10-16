@@ -1,25 +1,21 @@
 var SnippetCreate = React.createClass({
   getInitialState: function(){
+    // debugger;
     return ({
-      result: "function(){ return 'hello world'};",
-      saveButtonClicked: false
+      codeBody: "function(){ return 'hello world'};",
+      showTitleField: false
     });
   },
 
-  runCode: function(){
+  runCode: function(e){
+    e.preventDefault();
     var input = document.getElementById("codeInput").value;
-    this.setState({ result: input});
+    this.setState({ codeBody: input});
   },
 
-  saveCode: function(){
-    this.setState({saveButtonClicked: true});
-    var title = this.makeid();
-    var input = document.getElementById("codeInput").value;
-    var data = {title: title, body: input};
-    // debugger;
-    ApiUtil.saveSnippet(data);
-    this.setState({result: ""});
-    input = "";
+  saveCode: function(e){
+    e.preventDefault();
+    this.setState({showTitleField: true});
   },
 
   makeid: function (){
@@ -30,15 +26,19 @@ var SnippetCreate = React.createClass({
         return text;
     },
 
+    removeTitle: function(){
+      this.setState({showTitleField: false});
+    },
+
   render: function (){
 
     var titleInputField;
-      if (this.state.saveButtonClicked) {
-        titleInputField = <TitleInput />;
+      if (this.state.showTitleField) {
+        titleInputField = <TitleInput clicked={this.removeTitle} body={this.state.codeBody}/>;
       } else {
         titleInputField = null;
       }
-      
+
     return (
       <div className="container snippetcreator">
         <div className="row stretch-height">
@@ -46,7 +46,7 @@ var SnippetCreate = React.createClass({
             {titleInputField}
             <form className="form-horizontal">
               <div className="form-group">
-                <label for="codeInput" className="control-label">Type your code here</label>
+                <label htmlFor="codeInput" className="control-label">Type your code here</label>
                 <textarea id="codeInput" className="form-control" rows="4"></textarea>
               </div>
               <button onClick={this.runCode} type="submit" className="btn btn-default">Run code</button>
@@ -55,7 +55,7 @@ var SnippetCreate = React.createClass({
           </div>
           <div className="col-md-6 stretch-height">
             <p className="resultTitle" ><strong >Result here</strong></p>
-            <pre id="resultCode" className="prettify lang-js">{this.state.result}</pre>
+            <pre id="resultCode" className="prettify lang-js">{this.state.codeBody}</pre>
           </div>
         </div>
 
