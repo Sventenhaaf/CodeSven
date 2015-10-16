@@ -1,3 +1,14 @@
+- Navbar
+- Style the Create page (with codemirror)
+- Showing Snippets and Search (and fix author_id problem if its still there) - slick
+- Add likes and tags
+- Toggle to CodeZen - and code with great background images - https://unsplash.com/
+- Make the interpreter awesome - http://www.codeproject.com/Articles/345888/How-to-write-a-simple-interpreter-in-JavaScript
+  - https://github.com/mozilla/narcissus/
+
+
+
+
 See slick for cool sliders between code http://kenwheeler.github.io/slick/
 
 Keep in mind CodeMirror for code editing
