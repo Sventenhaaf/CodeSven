@@ -7,18 +7,33 @@
     getInitialState: function(){
       return {
         view: "/create",
+        username: ", " + window.CURRENT_USER,
+        browseCreateButton: "browse"
       };
     },
+
+
 
     toggleView: function(event){
       event.preventDefault();
       var toggle = this.props.location.pathname === "/browse" ? "create" : "browse";
       this.props.history.pushState(null, toggle);
       this.setState({ view: toggle});
+      this.browseCreateButton();
+    },
+
+    browseCreateButton: function(){
+      var buttonName = this.props.location.pathname === "/browse" ? "browse" : "create";
+      this.setState({ browseCreateButton: buttonName});
     },
 
     handleLogout: function(){
       AccountUtil.logOutUser();
+    },
+
+    handleLogin: function(){
+      var loginDir = this.props.location.pathname = "/users/new";
+      this.props.history.pushState(null, loginDir);
     },
 
     render: function(){
@@ -35,7 +50,7 @@
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">Welcome to CodeSven!</a>
+                <a className="navbar-brand" href="#">Welcome to CodeSven{this.state.username}!</a>
               </div>
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
@@ -44,7 +59,10 @@
                   <button onClick={this.handleLogout} type="submit" className="btn btn-default">Log Out</button>
                   </form>
                   <form className="navbar-form navbar-right">
-                  <button onClick={this.toggleView} type="submit" className="btn btn-default">Toggle Browse / Create </button>
+                  <button onClick={this.handleLogin} type="submit" className="btn btn-default">Log in</button>
+                </form>
+                  <form className="navbar-form navbar-right">
+                  <button onClick={this.toggleView} type="submit" className="btn btn-default">{this.state.browseCreateButton}</button>
                 </form>
               </div>
             </div>

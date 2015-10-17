@@ -11,5 +11,11 @@ ApiActions = {
       actionType: SnippetConstants.FAILED_DB_SAVE,
       errorcode: errorcode
     });
+  },
+  receiveUser: function(username){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.USER_RECEIVED,
+      username: username
+    });
   }
 };

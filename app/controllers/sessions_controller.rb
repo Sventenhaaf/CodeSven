@@ -17,6 +17,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def show
+    render json: current_user.username
+  end
+
   def destroy
     # debugger
     sign_out

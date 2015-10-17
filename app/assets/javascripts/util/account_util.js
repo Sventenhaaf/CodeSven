@@ -7,5 +7,5 @@ window.AccountUtil = {
         window.location = "/";
       },
     });
-  }
+  },
 };

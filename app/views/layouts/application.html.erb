@@ -10,11 +10,9 @@
 <body>
   <div class="container">
     <% if signed_in? %>
-      <%= current_user.username %>
-      <%= button_to "Sign Out", session_url, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign In", new_session_url %>
-      <%= link_to "Sign Up", new_user_url %>
+      <script type="text/javascript">
+        window.CURRENT_USER = "<%= current_user.username %>"
+      </script>
     <% end %>
 
     <br>
@@ -23,7 +21,7 @@
 
 
     <%= yield %>
-    
+
   </div>
 
 </body>
