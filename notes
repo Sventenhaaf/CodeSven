@@ -1,4 +1,10 @@
-- Navbar - http://bensmithett.com/server-rendered-react-components-in-rails/
+- login
+  - copy html from old tryout
+  - direct redirect to good page
+
+- MOchi Library - make sure it also works while logged out
+  - Textarea elements in react have some special behavior
+
 - Style the Create page (with codemirror)
 - Showing Snippets and Search (and fix author_id problem if its still there) - slick
 - Add likes and tags

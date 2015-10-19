@@ -17,5 +17,17 @@ ApiActions = {
       actionType: SnippetConstants.USER_RECEIVED,
       username: username
     });
+  },
+  loggedIn: function(username){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.USER_LOGGED_IN,
+      username: username
+    });
+  },
+  loggedOut: function(){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.USER_LOGGED_OUT,
+      username: ""
+    });
   }
 };

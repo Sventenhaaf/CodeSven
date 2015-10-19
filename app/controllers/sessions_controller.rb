@@ -7,10 +7,9 @@ class SessionsController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-
     if user
       sign_in(user)
-      redirect_to "/"
+      render json: {"username" => user.username}
     else
       flash.now[:errors] = ["invalid combination of username and password"]
       render :new
@@ -22,8 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # debugger
     sign_out
-    render json: "logged out"
+    render json: {"username" => ""}
   end
 end

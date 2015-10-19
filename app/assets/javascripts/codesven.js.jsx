@@ -7,12 +7,11 @@
     getInitialState: function(){
       return {
         view: "/create",
-        username: ", " + window.CURRENT_USER,
-        browseCreateButton: "browse"
+        username: window.CURRENT_USER,
+        browseCreateButton: "browse",
+        showLogin: false
       };
     },
-
-
 
     toggleView: function(event){
       event.preventDefault();
@@ -32,11 +31,37 @@
     },
 
     handleLogin: function(){
-      var loginDir = this.props.location.pathname = "/users/new";
-      this.props.history.pushState(null, loginDir);
+      this.setState({showLogin: true});
+    },
+
+    welcomeMessage: function(){
+      if (typeof this.state.username === "undefined"){
+        return "Welcome to CodeSven!";
+      }
+      else { return "Welcome to CodeSven, " + this.state.username + "!";}
+    },
+
+    changeUsername: function(username){
+      this.setState({username: username});
+      this.setState({showLogin: false});
     },
 
     render: function(){
+      var loginField;
+        if (this.state.showLogin) {
+          loginField = <Login changed={this.changeUsername}/>
+        } else {
+          loginField = null;
+        }
+
+      var loginOrLogout;
+        if (this.state.username){
+          loginOrLogout = <button onClick={this.handleLogout} type="submit" className="btn btn-default">Log Out</button>
+        }
+        else {
+          loginOrLogout = <button onClick={this.handleLogin} type="submit" className="btn btn-default">Log in</button>
+        }
+
       return (
         <div className="container">
 
@@ -50,16 +75,13 @@
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">Welcome to CodeSven{this.state.username}!</a>
+                <a className="navbar-brand" href="#">{this.welcomeMessage()}</a>
               </div>
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
                 </ul>
-                <form className="navbar-form navbar-right">
-                  <button onClick={this.handleLogout} type="submit" className="btn btn-default">Log Out</button>
-                  </form>
                   <form className="navbar-form navbar-right">
-                  <button onClick={this.handleLogin} type="submit" className="btn btn-default">Log in</button>
+                  {loginOrLogout}
                 </form>
                   <form className="navbar-form navbar-right">
                   <button onClick={this.toggleView} type="submit" className="btn btn-default">{this.state.browseCreateButton}</button>
@@ -67,7 +89,7 @@
               </div>
             </div>
           </nav>
-
+          {loginField}
           {this.props.children}
         </div>
       );

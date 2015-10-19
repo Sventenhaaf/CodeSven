@@ -1,35 +1,29 @@
 (function(root){
-  var ACCOUNT_CHANGE_EVENT = "accountChange";
+  var USER_CHANGE_EVENT = "userChange";
 
   var _username = "";
 
-  var resetUserName = function(username){
+  var resetUsername = function(username){
     _username = username;
   };
 
-  root.AccountStore = $.extend({}, EventEmitter.prototype, {
-    user: function(){
+  root.UserStore = $.extend({}, EventEmitter.prototype, {
+    username: function(){
       return _username;
     },
-
     addChangeListener: function(callback){
-      this.on(ACCOUNT_CHANGE_EVENT, callback);
+      this.on(USER_CHANGE_EVENT, callback);
     },
-
-    removeChangeListener: function(callback){
-      this.removeListener(ACCOUNT_CHANGE_EVENT, callback);
-    },
-
-    dispatcherID: AppDispatcher.register(function(payload) {
-
+    dispatcherID: AppDispatcher.register(function (payload) {
       switch(payload.actionType) {
-        case SnippetConstants.USER_RECEIVED:
-
-          resetUserName(payload.username);
-          AccountStore.emit(ACCOUNT_CHANGE_EVENT);
+        case SnippetConstants.USER_LOGGED_IN:
+          resetUsername(payload.username.username);
+          UserStore.emit(USER_CHANGE_EVENT);
           break;
+        case SnippetConstants.USER_LOGGED_OUT:
+          debugger
+          resetUsername(payload.username);
       }
     })
   });
-
 })(this);

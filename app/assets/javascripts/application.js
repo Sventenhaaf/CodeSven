@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
-//= require MochiKit.js
-//= require interpreter.js
 //= require flux
 //= require react
 //= require react_ujs
+//= require MochiKit.js
+//= require interpreter.js
+
 //= require components
 //= require eventemitter
 //= require jquery

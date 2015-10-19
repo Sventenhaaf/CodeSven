@@ -44,7 +44,8 @@ var SnippetCreate = React.createClass({
 
     return (
       <div className="container snippetcreator">
-        <MochiInput />
+
+          <MochiInput />
         <div className="row stretch-height">
           <div className="col-md-6 stretch-height">
             <button onClick={this.runCode} type="submit" className="btn btn-default">
@@ -57,8 +58,6 @@ var SnippetCreate = React.createClass({
                 <label htmlFor="codeInput" className="control-label">Type your code here</label>
                 <textarea id="codeInput" className="form-control" rows="4"></textarea>
               </div>
-
-
             </form>
           </div>
           <div className="col-md-6 stretch-height">
@@ -66,10 +65,6 @@ var SnippetCreate = React.createClass({
             <pre id="resultCode" className="prettify lang-js">{this.state.codeBody}</pre>
           </div>
         </div>
-
-
-
-
       </div>
 
     )
