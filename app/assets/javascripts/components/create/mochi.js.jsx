@@ -1,8 +1,10 @@
 var MochiInput = React.createClass({
 
   render: function(){
+
     return (
       <div>
+
           <form id="interpreter_form" autocomplete="off">
               <div id="interpreter_area">
                   <div id="interpreter_output" value="hello"></div>

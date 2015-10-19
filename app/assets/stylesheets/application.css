@@ -3,4 +3,5 @@
     *= require main
     *= require desert
     *= require custom
+    *= require CMcodemirror
 */

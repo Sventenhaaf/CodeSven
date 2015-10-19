@@ -21,6 +21,12 @@
 //= require jquery
 //= require bootstrap-sprockets
 
+//= require CMcodemirror.js
+//= require CMjavascript.js
+//= require CMmatchbrackets.js
+//= require CMcomment.js
+//= require CMcontinuecomment.js
+
 //= require jquery_ujs
 //= require reactrouter.min.js
 //= require run_prettify.js
