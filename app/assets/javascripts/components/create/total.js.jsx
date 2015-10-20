@@ -1,6 +1,7 @@
 var TotalCreate = React.createClass({
   getInitialState: function(){
-    return ({ codestring: "" });
+    return ({ codestring: "",
+              outputvalue: ""});
   },
 
   componentDidMount: function(){
@@ -9,7 +10,8 @@ var TotalCreate = React.createClass({
       matchBrackets: true,
       continueComments: "Enter",
       extraKeys: {"Ctrl-Q": "toggleComment"},
-      autofocus: true
+      autofocus: true,
+      theme : 'monokai'
     });
     var that = this;
     editor.on("change", function(cm, change) {
@@ -20,7 +22,7 @@ var TotalCreate = React.createClass({
     interpreterManager.initialize();
   },
 
-  handleChange: function(letter){
+  handleChange: function(letter, output){
     this.setState({codestring: letter});
   },
 
@@ -34,6 +36,11 @@ var TotalCreate = React.createClass({
 
   removeTitle: function(){
     this.setState({showTitleField: false});
+  },
+
+  renderOutput: function(e){
+    e.preventDefault();
+    debugger
   },
 
   render: function(){
@@ -68,8 +75,20 @@ var TotalCreate = React.createClass({
 
           <div className="col-md-2" id="totalmiddle">this is blank space</div>
 
-          <div id="interpreter_area" className="col-md-3">
-            <div id="interpreter_output" value="hello"></div>
+          <div id="interpreter_area" className="prettify col-md-1">
+              <pre className='prettyprint' id="interpreter_output"></pre>
+          </div>
+
+          <div className="col-md-2">
+            <button className="btn btn-default btn-sm">
+              <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
+            </button>
+            <div className="prettify" id="finalresult"></div>
+              <pre className='prettyprint'>
+                  def hello
+                    puts 'hello'
+                  end
+              </pre>
           </div>
 
           <div className="col-md-2" id="totalrightmost">margin right</div>

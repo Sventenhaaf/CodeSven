@@ -3,5 +3,7 @@
     *= require main
     *= require desert
     *= require CMcodemirror
+    *= require monokai
+    *= require prettify
     *= require custom
 */
