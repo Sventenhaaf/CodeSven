@@ -22,8 +22,15 @@
     },
 
     browseCreateButton: function(){
-      var buttonName = this.props.location.pathname === "/browse" ? "browse" : "create";
+      // debugger
+      var buttonName = this.props.location.pathname === "/create" ? "create" : "browse";
       this.setState({ browseCreateButton: buttonName});
+    },
+
+    toCreate: function(){
+      this.props.history.pushState(null, "create");
+      this.setState({ browseCreateButton: "create"});
+      this.browseCreateButton();
     },
 
     handleLogout: function(){
@@ -75,7 +82,7 @@
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">{this.welcomeMessage()}</a>
+                <a className="navbar-brand" onClick={this.toCreate}>{this.welcomeMessage()}</a>
               </div>
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
