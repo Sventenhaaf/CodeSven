@@ -237,7 +237,7 @@ EvalFunctions = {
 InterpreterManager.prototype.doEval = EvalFunctions.choose();
 
 InterpreterManager.prototype.doSubmit = function () {
-    var elem = getElement("interpreter_text");
+    var elem = getElement("interpreter_textarea");
     var code = elem.value;
     elem.value = "";
     var isContinuation = false;

@@ -1,3 +1,27 @@
+
+#totalinput, #interpreter_output, #totalleftmost, #totalrightmost, #totalmiddle {
+  color: black;
+}
+
+#interpreter_area {
+  background-color: #cc0;
+  min-height: 300px;
+  color: black;
+  border-radius: 5px;
+}
+
+#multiline {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  background-color: #f7f7f7;
+}
+
+
+
+
 .snippetcreator {
   min-height: 500px;
 }

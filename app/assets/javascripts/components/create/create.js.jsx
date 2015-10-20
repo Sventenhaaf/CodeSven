@@ -44,6 +44,8 @@ var SnippetCreate = React.createClass({
 
     return (
       <div className="container snippetcreator">
+          <TotalCreate />
+          <br></br><br></br><br></br><br></br>
           <CodeMirrorInput />
           <MochiInput />
         <div className="row stretch-height">

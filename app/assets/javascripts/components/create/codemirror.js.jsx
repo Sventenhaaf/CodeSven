@@ -9,15 +9,16 @@ var CodeMirrorInput = React.createClass({
   },
 
   render: function(){
+    
     return (
       <div class="container">
           <div class="row">
-              <div class="col-md-5">
-                <textarea id="codemirrorcode" name="code">
+              <div id="cminputfield" class="col-md-5">
+                <textarea id="codemirrorcode" name="code" >
                   //comments
                 </textarea>
               </div>
-              <div class="col-md-5">
+              <div id="cminputfield" class="col-md-5">
                   Body content
               </div>
           </div>
