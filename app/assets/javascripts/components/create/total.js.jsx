@@ -1,6 +1,9 @@
 var TotalCreate = React.createClass({
   getInitialState: function(){
-    return ({ codestring: "",
+    var codestring;
+    if (this.props.snippet) { codestring = this.props.snippet.body; }
+    else { codestring = ""; }
+    return ({ codestring: codestring,
               outputvalue: ""});
   },
 
@@ -65,7 +68,7 @@ var TotalCreate = React.createClass({
               <span className="glyphicon glyphicon-save" aria-hidden="true"></span> Save code
             </button>
             {titleInputField}
-            <textarea id="totalcodemirror" ref="cminput"></textarea>
+            <textarea id="totalcodemirror" ref="cminput">{this.state.codestring}</textarea>
               <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="10" value={this.state.codestring}>
               </textarea>
           </div>

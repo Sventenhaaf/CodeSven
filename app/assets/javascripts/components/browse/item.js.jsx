@@ -2,7 +2,7 @@ var SnippetItem = React.createClass({
   mixins: [ReactRouter.History],
   handleClick: function(e){
     e.preventDefault();
-    this.history.pushState(this.props.snippet.id);
+    this.history.pushState(null, "edit/" + this.props.snippet.id);
   },
 
   render: function (){

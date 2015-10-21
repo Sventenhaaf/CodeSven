@@ -17,17 +17,13 @@ var SnippetBrowse = React.createClass({
     this.setState({ snippets: SnippetStore.all() });
   },
 
-  handleClick: function (id) {
-    this.props.history.pushState(null, "edit/" + id);
-  },
-
   render: function (){
     return (
       <div>
         <input type="text" className="form-control" placeholder="Snippet Title"></input>
         <ul>
           {this.state.snippets.map(function(snippet){
-            return <SnippetItem snippet={snippet} clicks={this.handleClick}/>
+            return <SnippetItem snippet={snippet} />
           }.bind(this))}
         </ul>
       </div>

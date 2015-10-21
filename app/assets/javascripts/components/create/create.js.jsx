@@ -1,10 +1,22 @@
 var SnippetCreate = React.createClass({
   getInitialState: function(){
-    // debugger;
+    // var editableSnippet = this.fetchSnippet();
+    // debugger
     return ({
       codeBody: "function(){ return 'hello world'};",
-      showTitleField: false
+      showTitleField: false,
+      // editableSnippet: editableSnippet
     });
+  },
+
+  fetchSnippet: function(){
+    var id = parseInt(this.props.params.snippetId);
+    var allSnippets = SnippetStore.all();
+    for (var i = 0; i < allSnippets.length; i++) {
+      if (id === allSnippets[i].id) {
+        return allSnippets[i];
+      }
+    }
   },
 
   runCode: function(e){
@@ -44,8 +56,8 @@ var SnippetCreate = React.createClass({
 
     return (
       <div className="container snippetcreator">
-          <TotalCreate />
-          
+          <TotalCreate snippet={this.fetchSnippet()}/>
+
       </div>
 
     )

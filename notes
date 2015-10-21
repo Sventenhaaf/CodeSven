@@ -1,16 +1,23 @@
+TA Material:
+- Login disappears first time I push button
+
+Todo:
+- User signup
+- More CRUD functionality to snippets
+- Search in Browse view
+
+Styling / Later:
+- Smooth User login / snippet save form appear
+- Toggle button browse create - always have the right name for te button
+- Run code at cmd-Enter
+- Likes and tags
+- HTML and CSS
+
+Heroku
 - Seed dump gem
 
 
 
-- Autofocus on CodeMirror textarea field
-- When I toggle back and forth between browse and create, something breaks
-- Run Code at cmd-Enter
-
-
-
-- login
-  - copy html from old tryout
-  - direct redirect to good page
 
 - MOchi Library - make sure it also works while logged out
   - Textarea elements in react have some special behavior
