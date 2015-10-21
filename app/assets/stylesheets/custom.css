@@ -29,7 +29,7 @@ body	{
 
 #interpreter_output {
   background-color: #222;
-  height: 300px;
+  height: 500px;
   border: 2px solid orange;
   margin: 0;
 }
@@ -73,8 +73,13 @@ body	{
 }
 
 .navbar {
-  background: rgba(100,100,0,0.4);
+  background: rgba(0,0,0,0.4);
   color: white;
+}
+
+#mothernav {
+  color: white;
+  font-weight: bold;
 }
 
 .navbar-brand {

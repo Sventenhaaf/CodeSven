@@ -1,5 +1,14 @@
 TA Material:
 
+Quickfix:
+- Put on App Academy site
+- Bigger windows
+- Color white background for save errors
+- Default guest Login
+- working functions in seed data
+- Indicate that snippet is saved properly
+- fix browse/create button name
+
 Todo:
 - User signup
 - More CRUD functionality to snippets
@@ -8,6 +17,7 @@ Styling / Later:
 - Smooth User login / snippet save form appear
 - Clear button clears result field
 - Make sure save button becomes fork button
+- Put author name instead of author id
 - Search options
 - Toggle button browse create - always have the right name for te button
 - Navbar styling and welcome text
@@ -15,12 +25,15 @@ Styling / Later:
 - Likes and tags
 - HTML and CSS
 - Recognize infinite loops and act on them
+(Florante)
+- button with "your functions"
+- check out robohash
 
 Heroku
 - Seed dump gem
 
 After class:
--
+- Redo the interpreter - getting all errors to work etc
 
 
 

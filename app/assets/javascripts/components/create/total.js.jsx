@@ -58,9 +58,9 @@ var TotalCreate = React.createClass({
       <div className="row">
         <form id="interpreter_form" autocomplete="off">
 
-          <div className="col-md-2" id="totalleftmost"></div>
+          <div className="col-md-1" id="totalleftmost"></div>
 
-          <div className="col-md-3">
+          <div className="col-md-4">
             <button className="btn btn-default btn-sm" form="interpreter_form" >
               <span className="glyphicon glyphicon-play" aria-hidden="true"></span> Run
             </button>
@@ -69,21 +69,21 @@ var TotalCreate = React.createClass({
             </button>
             {titleInputField}
             <textarea id="totalcodemirror" ref="cminput">{this.state.codestring}</textarea>
-              <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="10" value={this.state.codestring}>
+              <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="17" value={this.state.codestring}>
               </textarea>
           </div>
 
           <div className="col-md-2" id="totalmiddle"></div>
 
 
-          <div id="interpreter_area" className="prettify col-md-3">
+          <div id="interpreter_area" className="prettify col-md-4">
               <button className="btn btn-default btn-sm">
                 <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
               </button>
               <pre className='prettyprint' id="interpreter_output"></pre>
           </div>
 
-          <div className="col-md-2" id="totalrightmost"></div>
+          <div className="col-md-1" id="totalrightmost"></div>
         </form>
       </div>
     );
