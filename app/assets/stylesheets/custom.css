@@ -1,5 +1,6 @@
 body	{
-  background:url("https://images.unsplash.com/photo-1443479579455-1860f114bf77?q=80&fm=jpg&s=dc7000360dec6e5368d1ed3e4d0b38ae") top right no-repeat;
+  background:url("https://unsplash.it/1800/1000/?random") top right no-repeat;
+
   background-attachment:fixed;
   background-size: cover;
  }
@@ -22,6 +23,9 @@ body	{
   color: red;
 }
 
+.browseitem {
+  height: 150px;
+}
 
 #interpreter_output {
   background-color: #222;
@@ -30,7 +34,25 @@ body	{
   margin: 0;
 }
 
+#snippetitem {
+  color: orange;
+}
 
+#snippetcredentials {
+  background: rgba(30,30,120,0.3);
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#snippetitemwrapper {
+  font-family: courier;
+  color: orange;
+  background: rgba(0,0,0,0.5);
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  cursor: hand;
+}
 
 /*#interpreter_area {
   background-color: #cc0;
@@ -48,7 +70,7 @@ body	{
 }
 
 .navbar {
-  background: rgba(0,0,0,0);
+  background: rgba(100,100,0,0.4);
   color: white;
 }
 

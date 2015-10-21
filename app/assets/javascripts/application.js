@@ -16,7 +16,6 @@
 //= require MochiKit.js
 //= require interpreter.js
 
-//= require components
 //= require eventemitter
 //= require jquery
 //= require bootstrap-sprockets
@@ -29,5 +28,7 @@
 
 //= require jquery_ujs
 //= require reactrouter.min.js
+//= require codesven
+//= require components
 //= require run_prettify.js
 //= require_tree .

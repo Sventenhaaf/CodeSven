@@ -28,7 +28,7 @@ var TotalCreate = React.createClass({
 
   saveCode: function(e){
     e.preventDefault();
-    var codeBody = document.getElementById("codeInput").value;
+    var codeBody = document.getElementById("totalcodemirror").value;
     this.setState({
       codeBody: codeBody,
       showTitleField: true});

@@ -1,4 +1,5 @@
 var SnippetBrowse = React.createClass({
+
   getInitialState: function(){
     return { snippets: SnippetStore.all() };
   },
@@ -16,15 +17,18 @@ var SnippetBrowse = React.createClass({
     this.setState({ snippets: SnippetStore.all() });
   },
 
-  render: function (){
+  handleClick: function (id) {
+    this.props.history.pushState(null, "edit/" + id);
+  },
 
+  render: function (){
     return (
       <div>
         <input type="text" className="form-control" placeholder="Snippet Title"></input>
-        <ul>All snippets index
+        <ul>
           {this.state.snippets.map(function(snippet){
-            return <SnippetItem snippet={snippet}/>
-          })}
+            return <SnippetItem snippet={snippet} clicks={this.handleClick}/>
+          }.bind(this))}
         </ul>
       </div>
     )
