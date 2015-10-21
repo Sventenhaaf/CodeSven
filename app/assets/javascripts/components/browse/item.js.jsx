@@ -6,7 +6,7 @@ var SnippetItem = React.createClass({
     return (
       <div class="container">
         <div>{title}</div>
-        <div><pre>{body}</pre></div>
+        <div><pre className="prettyprint">{body}</pre></div>
         <div>Written By: {author}</div>
       </div>
     )

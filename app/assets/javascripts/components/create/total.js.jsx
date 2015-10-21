@@ -55,10 +55,10 @@ var TotalCreate = React.createClass({
       <div className="row">
         <form id="interpreter_form" autocomplete="off">
 
-          <div className="col-md-1" id="totalleftmost">margin left</div>
+          <div className="col-md-2" id="totalleftmost"></div>
 
           <div className="col-md-3">
-            <button className="btn btn-default btn-sm" type="submit" form="interpreter_form" value="Submit">
+            <button className="btn btn-default btn-sm" form="interpreter_form" >
               <span className="glyphicon glyphicon-play" aria-hidden="true"></span> Run
             </button>
             <button onClick={this.saveCode} className="btn btn-default btn-sm">
@@ -66,32 +66,21 @@ var TotalCreate = React.createClass({
             </button>
             {titleInputField}
             <textarea id="totalcodemirror" ref="cminput"></textarea>
+              <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="10" value={this.state.codestring}>
+              </textarea>
           </div>
 
-          <div id="multiline" className="col-md-1">
-            <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="10" value={this.state.codestring}>
-            </textarea>
-          </div>
+          <div className="col-md-2" id="totalmiddle"></div>
 
-          <div className="col-md-2" id="totalmiddle">this is blank space</div>
 
-          <div id="interpreter_area" className="prettify col-md-1">
+          <div id="interpreter_area" className="prettify col-md-3">
+              <button className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
+              </button>
               <pre className='prettyprint' id="interpreter_output"></pre>
           </div>
 
-          <div className="col-md-2">
-            <button className="btn btn-default btn-sm">
-              <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
-            </button>
-            <div className="prettify" id="finalresult"></div>
-              <pre className='prettyprint'>
-                  def hello
-                    puts 'hello'
-                  end
-              </pre>
-          </div>
-
-          <div className="col-md-2" id="totalrightmost">margin right</div>
+          <div className="col-md-2" id="totalrightmost"></div>
         </form>
       </div>
     );

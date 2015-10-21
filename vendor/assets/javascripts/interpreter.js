@@ -128,7 +128,7 @@ InterpreterManager.prototype.moveHistory = function (dir) {
 InterpreterManager.prototype.runMultipleLines = function (text) {
     var lines = rstrip(text).replace("\r\n", "\n").split(/\n/);
     appendChildNodes("interpreter_output",
-        SPAN({"class": "code"}, ">>> ", izip(lines, imap(BR, cycle([null]))))
+        SPAN({"class": "inputstring"}, "> ", izip(lines, imap(BR, cycle([null]))))
     );
     this.runCode(text);
 };
@@ -181,7 +181,7 @@ InterpreterManager.prototype.showError = function (e) {
         e = new Error(e);
     }
     appendChildNodes("interpreter_output",
-        SPAN({"class": "error"}, "Error:"),
+        SPAN({"class": "error"}, "Error!"),
         TABLE({"class": "error"},
             THEAD({"class": "invisible"}, TD({"colspan": 2})),
             TFOOT({"class": "invisible"}, TD({"colspan": 2})),
@@ -246,7 +246,7 @@ InterpreterManager.prototype.doSubmit = function () {
         code = code.substr(0, code.length - 2);
     }
     appendChildNodes("interpreter_output",
-        SPAN({"class": "code"}, ">>> ", code),
+        SPAN({"class": "inputstring"}, "> ", code),
         BR()
     );
     this.lines.push(code);
@@ -280,7 +280,7 @@ InterpreterManager.prototype.showResult = function (res) {
     }
     if (typeof(res) != "undefined") {
         appendChildNodes("interpreter_output",
-            SPAN({"class": "data"}, repr(res)),
+            SPAN({"class": "outputstring"}, repr(res)),
             BR()
         );
         this.doScroll();
@@ -289,7 +289,7 @@ InterpreterManager.prototype.showResult = function (res) {
 
 window.writeln = function () {
     appendChildNodes("interpreter_output",
-        SPAN({"class": "data"}, arguments),
+        SPAN({"class": "outputstring"}, arguments),
         BR()
     );
     interpreterManager.doScroll();
@@ -349,7 +349,8 @@ window.inspect = function (o) {
 };
 
 interpreterManager = new InterpreterManager();
-addLoadEvent(interpreterManager.initialize);
+// commented this line because it's being initialized elsewhere
+// addLoadEvent(interpreterManager.initialize);
 
 // rewrite the view-source links
 addLoadEvent(function () {

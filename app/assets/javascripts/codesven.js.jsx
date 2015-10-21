@@ -43,9 +43,9 @@
 
     welcomeMessage: function(){
       if (typeof this.state.username === "undefined"){
-        return "Welcome to CodeSven!";
+        return "Welcome to CodeZen!";
       }
-      else { return "Welcome to CodeSven, " + this.state.username + "!";}
+      else { return "Welcome to CodeZen, " + this.state.username + "!";}
     },
 
     changeUsername: function(username){
@@ -70,7 +70,7 @@
         }
 
       return (
-        <div className="container">
+        <div className="motherofall container">
 
           <nav className="navbar navbar-default">
             <div className="container-fluid">
