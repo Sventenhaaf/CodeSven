@@ -37,7 +37,8 @@
       AccountUtil.logOutUser();
     },
 
-    handleLogin: function(){
+    handleLogin: function(e){
+      e.preventDefault();
       this.setState({showLogin: true});
     },
 

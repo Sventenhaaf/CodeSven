@@ -1,26 +1,28 @@
 TA Material:
-- Login disappears first time I push button
 
 Todo:
 - User signup
 - More CRUD functionality to snippets
-- Search in Browse view
 
 Styling / Later:
 - Smooth User login / snippet save form appear
+- Clear button clears result field
+- Make sure save button becomes fork button
+- Search options
 - Toggle button browse create - always have the right name for te button
+- Navbar styling and welcome text
 - Run code at cmd-Enter
 - Likes and tags
 - HTML and CSS
+- Recognize infinite loops and act on them
 
 Heroku
 - Seed dump gem
 
+After class:
+-
 
 
-
-- MOchi Library - make sure it also works while logged out
-  - Textarea elements in react have some special behavior
 
 - Style the Create page (with codemirror)
 - Add likes and tags
