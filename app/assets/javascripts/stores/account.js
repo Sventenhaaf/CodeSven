@@ -9,7 +9,10 @@
   };
 
   var resetError = function(errorcode){
-    _error = errorcode;
+    if (errorcode[0]) {
+      _error = errorcode;
+    }
+    else { _error = [errorcode]; }
   };
 
   root.UserStore = $.extend({}, EventEmitter.prototype, {

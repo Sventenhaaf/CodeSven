@@ -1,19 +1,26 @@
+Laura:
+- Whats your experience in getting foreign people jobs in the bay area - NA
+- What will the coming three weeks look like, so I know what is relevant for me - > 80% usefull
+- Any connections with companies or alumni in Europe - NA
+- What should I do with the survey you sent out - fill in
+- References - Can do, pick TA to give reference (Jeff?)
+
+
 TA Material:
+- Keep text value in hidden box (is working but feels hacky)
 - error handling in the stores - is this a good way?
 
 Quickfix:
-- Show errors when login fails
-- working functions in seed data
 - Indicate that snippet is saved properly
 - fix browse/create button name
 - Keep code in hidden field if it is in Codemirror field
 
 Todo:
-- User signup
 - More CRUD functionality to snippets ( basically, apply fork button and add delete functionality)
 - Security - before_action and authenticity token
 
 Styling / Later:
+- nicer display of error messages
 - Smooth User login / snippet save form appear
 - Clear button clears result field
 - Make sure save button becomes fork button

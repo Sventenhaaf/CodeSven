@@ -35,6 +35,11 @@ var TotalCreate = React.createClass({
     this.setState({
       codeBody: codeBody,
       showTitleField: true});
+    console.log(document.getElementById("totalcodemirror").value);
+  },
+
+  runCode: function(){
+    this.handleChange(this.state.codestring);
   },
 
   removeTitle: function(){
@@ -61,7 +66,7 @@ var TotalCreate = React.createClass({
               <div className="col-md-1" id="totalleftmost"></div>
 
               <div className="col-md-10">
-                <button className="btn btn-default btn-sm" form="interpreter_form" >
+                <button onClick={this.runCode} className="btn btn-default btn-sm" form="interpreter_form" >
                   <span className="glyphicon glyphicon-play" aria-hidden="true"></span> Run
                 </button>
                 <button onClick={this.saveCode} className="btn btn-default btn-sm">
@@ -79,10 +84,10 @@ var TotalCreate = React.createClass({
             <div className="row">
               <div className="col-md-1" id="midrightmost"></div>
               <div id="interpreter_area" className="prettify col-md-10">
-                  <button className="btn btn-default btn-sm">
-                    <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
-                  </button>
-                  <pre className='prettyprint' id="interpreter_output"></pre>
+                <button className="btn btn-default btn-sm">
+                  <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
+                </button>
+                <pre className='prettyprint' id="interpreter_output"></pre>
               </div>
               <div className="col-md-1" id="totalrightmost"></div>
             </div>

@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
-      redirect_to "/"
+      render json: {"username" => @user.username}
     else
       flash.now[:errors] = @user.errors.full_messages
-      render :new
+      render json: { "errorcode" => @user.errors.full_messages }
     end
   end
 

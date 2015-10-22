@@ -25,5 +25,23 @@ window.AccountUtil = {
       error: function(errorcode){
       }
     });
-  }
+  },
+
+  signupUser: function(username, password){
+    $.ajax({
+      type: "POST",
+      url: "users",
+      data: { user: { username: username, password: password}},
+      success: function(feedback){
+        if (feedback.username) {
+          ApiActions.loggedIn(feedback);
+        }
+        else {
+          ApiActions.failedLogin(feedback.errorcode);
+        }
+      },
+      error: function(errorcode){
+      }
+    });
+  },
 };
