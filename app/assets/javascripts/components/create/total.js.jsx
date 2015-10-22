@@ -38,6 +38,14 @@ var TotalCreate = React.createClass({
     console.log(document.getElementById("totalcodemirror").value);
   },
 
+  clearResult: function(e){
+    e.preventDefault();
+    var myNode = document.getElementById("interpreter_output");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.firstChild);
+    }
+  },
+
   runCode: function(){
     this.handleChange(this.state.codestring);
   },
@@ -84,7 +92,7 @@ var TotalCreate = React.createClass({
             <div className="row">
               <div className="col-md-1" id="midrightmost"></div>
               <div id="interpreter_area" className="prettify col-md-10">
-                <button className="btn btn-default btn-sm">
+                <button onClick={this.clearResult} className="btn btn-default btn-sm">
                   <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
                 </button>
                 <pre className='prettyprint' id="interpreter_output"></pre>

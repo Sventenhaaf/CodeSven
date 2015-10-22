@@ -1,73 +1,27 @@
-Laura:
-- Whats your experience in getting foreign people jobs in the bay area - NA
-- What will the coming three weeks look like, so I know what is relevant for me - > 80% usefull
-- Any connections with companies or alumni in Europe - NA
-- What should I do with the survey you sent out - fill in
-- References - Can do, pick TA to give reference (Jeff?)
-
-
 TA Material:
 - Keep text value in hidden box (is working but feels hacky)
 - error handling in the stores - is this a good way?
+- General security (before_action & auth token)
 
-Quickfix:
+Todo now:
+- add likes (model, controller, Jbuilder, view - like button and show total likes)
+- add tags (model, controller, Jbuilder, view - Add tags during save, show tags in snippet show, search)
+
+Nice to have:
 - Indicate that snippet is saved properly
-- fix browse/create button name
-- Keep code in hidden field if it is in Codemirror field
-
-Todo:
+- Fix browse/create button name
 - More CRUD functionality to snippets ( basically, apply fork button and add delete functionality)
-- Security - before_action and authenticity token
-
-Styling / Later:
-- nicer display of error messages
+- Nicer display of error messages
+- Run code at cmd-Enter
 - Smooth User login / snippet save form appear
-- Clear button clears result field
-- Make sure save button becomes fork button
 - Put author name instead of author id
 - Search options
-- Nicer save UX
-- Toggle button browse create - always have the right name for te button
-- Navbar styling and welcome text
-- Run code at cmd-Enter
-- Likes and tags
+
+Very Cool for Later:
 - HTML and CSS
-- Recognize infinite loops and act on them
-(Florante)
-- button with "your functions"
-- check out robohash
-
-Heroku
-- Seed dump gem
-
-After class:
 - Redo the interpreter - getting all errors to work etc
 
-
-
-- Style the Create page (with codemirror)
-- Add likes and tags
-- Toggle to CodeZen - and code with great background images - https://unsplash.com/
+Links:
 - Make the interpreter awesome - http://www.codeproject.com/Articles/345888/How-to-write-a-simple-interpreter-in-JavaScript
-  - https://github.com/mozilla/narcissus/
-
-
-
-
+- https://github.com/mozilla/narcissus/
 See slick for cool sliders between code http://kenwheeler.github.io/slick/
-
-Keep in mind CodeMirror for code editing
-
-Played around with prettify, might need to redo this:
-- download prettify js and save locally in javascripts
-- require in application.js
-- download prettify css and save locally in styles
-- require in application.css
-
-Save Github:
-echo "# CodeSven" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/Sventenhaaf/CodeSven.git
-git push -u origin master

@@ -43,9 +43,9 @@
 
     welcomeMessage: function(){
       if (typeof this.state.username === "undefined"){
-        return "Welcome to CodeZen!";
+        return "Welcome to CodeSven!";
       }
-      else { return "Welcome to CodeZen, " + this.state.username + "!";}
+      else { return "Welcome to CodeSven, " + this.state.username + "!";}
     },
 
     changeUsername: function(username){
