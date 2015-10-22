@@ -1,7 +1,11 @@
 /*
 
     Interpreter: JavaScript Interactive Interpreter
-
+    for printing all the input in the result pane -
+    line 252 (InterpreterManager.prototype.doSubmit) should be:
+      SPAN({"class": "inputstring"}, "> ", code),
+      instead of:
+      SPAN({"class": "inputstring"}, "> "),
 */
 InterpreterManager = function () {
     bindMethods(this);
@@ -246,7 +250,7 @@ InterpreterManager.prototype.doSubmit = function () {
         code = code.substr(0, code.length - 2);
     }
     appendChildNodes("interpreter_output",
-        SPAN({"class": "inputstring"}, "> ", code),
+        SPAN({"class": "inputstring"}, "> "),
         BR()
     );
     this.lines.push(code);
@@ -280,6 +284,7 @@ InterpreterManager.prototype.showResult = function (res) {
     }
     if (typeof(res) != "undefined") {
         appendChildNodes("interpreter_output",
+            SPAN({"class": "outputstring"}, "=>>> "),
             SPAN({"class": "outputstring"}, repr(res)),
             BR()
         );
@@ -289,6 +294,7 @@ InterpreterManager.prototype.showResult = function (res) {
 
 window.writeln = function () {
     appendChildNodes("interpreter_output",
+        SPAN({"class": "outputstring"}, "=> "),
         SPAN({"class": "outputstring"}, arguments),
         BR()
     );

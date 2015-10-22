@@ -1,4 +1,5 @@
 class Api::AccountsController < ApplicationController
+  
   def index
     @user = current_user
     if signed_in?

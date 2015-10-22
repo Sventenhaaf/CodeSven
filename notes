@@ -1,17 +1,16 @@
 TA Material:
 
 Quickfix:
-- Put on App Academy site
-- Bigger windows
-- Color white background for save errors
-- Default guest Login
+- Show errors when login fails
 - working functions in seed data
 - Indicate that snippet is saved properly
 - fix browse/create button name
+- Keep code in hidden field if it is in Codemirror field
 
 Todo:
 - User signup
 - More CRUD functionality to snippets
+- Security - before_action and authenticity token
 
 Styling / Later:
 - Smooth User login / snippet save form appear
@@ -19,6 +18,7 @@ Styling / Later:
 - Make sure save button becomes fork button
 - Put author name instead of author id
 - Search options
+- Nicer save UX
 - Toggle button browse create - always have the right name for te button
 - Navbar styling and welcome text
 - Run code at cmd-Enter

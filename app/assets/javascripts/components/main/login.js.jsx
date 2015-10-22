@@ -18,17 +18,25 @@ var Login = React.createClass({
     var self = this;
     return(
       <div className="container loginpage">
-        <form>
-          <div className="form-group">
-            <label htmlFor="loginUserName">User Name</label>
-            <input type="username" className="form-control" id="loginUserName" placeholder="Guest"></input>
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div id="loginform" className="col-md-4">
+            <form>
+              <div className="form-group">
+                <label htmlFor="loginUserName">User Name</label>
+                <input type="username" className="form-control" id="loginUserName" value="guest"></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="loginPassword">Password</label>
+                <input type="password" className="form-control" id="loginPassword" value="guestguest"></input>
+              </div>
+              <button type="submit" className="btn btn-primary center-block" onClick={this.clickHandler} >Submit</button>
+            </form>
           </div>
-          <div className="form-group">
-            <label htmlFor="loginPassword">Password</label>
-            <input type="password" className="form-control" id="loginPassword" placeholder="guestguest"></input>
-          </div>
-          <button type="submit" className="btn btn-primary center-block" onClick={this.clickHandler} >Submit</button>
-        </form>
+          <div className="col-md-4"></div>
+
+        </div>
+
       </div>
     );
   }

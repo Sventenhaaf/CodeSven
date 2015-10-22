@@ -13,6 +13,11 @@ User.create!(
   password: "maschamascha"
 )
 
+User.create!(
+  username: "guest",
+  password: "guestguest"
+)
+
 Snippet.create!(
   title: "Cool Sven Function",
   body: "var function(){

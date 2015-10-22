@@ -5,8 +5,22 @@ body	{
   background-size: cover;
  }
 
+#saveerrors {
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 3px 3px 3px 3px;
+  color: white;
+  border-radius: 5px;
+  margin: 0;
+}
 
-
+#loginform {
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  color: white;
+}
 
 .inputstring {
   font-family: courier;
@@ -30,8 +44,9 @@ body	{
 #interpreter_output {
   background-color: #222;
   height: 500px;
-  border: 2px solid orange;
+  border: 2px solid #9CF;
   margin: 0;
+  padding: 10px;
 }
 
 #snippetitem {
