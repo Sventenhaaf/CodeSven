@@ -22,7 +22,6 @@
     },
 
     browseCreateButton: function(){
-      // debugger
       var buttonName = this.props.location.pathname === "/create" ? "create" : "browse";
       this.setState({ browseCreateButton: buttonName});
     },

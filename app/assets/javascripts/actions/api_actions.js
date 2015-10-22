@@ -24,6 +24,12 @@ ApiActions = {
       username: username
     });
   },
+  failedLogin: function(errorcode){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.FAILED_LOGIN,
+      errorcode: errorcode
+    });
+  },
   loggedOut: function(){
     AppDispatcher.dispatch({
       actionType: SnippetConstants.USER_LOGGED_OUT,

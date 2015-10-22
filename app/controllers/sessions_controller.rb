@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
       sign_in(user)
       render json: {"username" => user.username}
     else
-      flash.now[:errors] = ["invalid combination of username and password"]
-      render :new
+      flash.now[:errors] = ["Invalid combination of username and password"]
+      render json: {"errorcode" => "Invalid combination of username and password"}
     end
   end
 

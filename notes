@@ -1,4 +1,5 @@
 TA Material:
+- error handling in the stores - is this a good way?
 
 Quickfix:
 - Show errors when login fails
@@ -9,7 +10,7 @@ Quickfix:
 
 Todo:
 - User signup
-- More CRUD functionality to snippets
+- More CRUD functionality to snippets ( basically, apply fork button and add delete functionality)
 - Security - before_action and authenticity token
 
 Styling / Later:

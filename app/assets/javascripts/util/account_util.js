@@ -14,8 +14,13 @@ window.AccountUtil = {
       type: "POST",
       url: "session",
       data: { user: { username: username, password: password}},
-      success: function(username){
-        ApiActions.loggedIn(username);
+      success: function(feedback){
+        if (feedback.username) {
+          ApiActions.loggedIn(feedback);
+        }
+        else {
+          ApiActions.failedLogin(feedback.errorcode);
+        }
       },
       error: function(errorcode){
       }
