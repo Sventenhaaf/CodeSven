@@ -79,7 +79,7 @@ var Login = React.createClass({
   render: function(){
     var loginTitle;
     if (this.state.selected === "login") {loginTitle = "Log In";}
-    else {loginTitle = "Sign Up Test Phase";}
+    else {loginTitle = "Sign Up";}
     var self = this;
 
     var toggleName;

@@ -4,17 +4,18 @@ class Api::LikesController < ApplicationController
   end
 
   def create
-    @like = Like.new(snippet_params)
+    @like = Like.new(like_params)
     @like.user_id = current_user.id
     if @like.save
-      render json: @Like
+      render json: @like
     end
   end
 
   def destroy
-    like = Like.find(params[:snippet_id], current_user_id)
+    like = Like.find(params[:like_id])
+    temp = like.dup
     if like.destroy
-      render json: {"deleted"}
+      render json: temp
     end
   end
 

@@ -23,6 +23,15 @@
     }
   };
 
+  var addLike = function(like){
+    var userid = like.user_id;
+    for (var i = 0; i < _snippets.length; i++) {
+      if (_snippets[i].id === like.snippet_id){
+        _snippets[i].likes += 1;
+      }
+    }
+  };
+
   root.SnippetStore = $.extend({}, EventEmitter.prototype, {
     all: function(){
       return _snippets.slice(0);
@@ -54,6 +63,10 @@
         case SnippetConstants.FAILED_DB_SAVE:
           resetErrors(payload.errorcode[0]);
           SnippetStore.emit(SNIPPETS_ERROR_EVENT);
+          break;
+        case SnippetConstants.ADDED_LIKE:
+          addLike(payload.like);
+          SnippetStore.emit(SNIPPETS_CHANGE_EVENT);
           break;
       }
     })

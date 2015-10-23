@@ -1,13 +1,35 @@
 var SnippetItem = React.createClass({
 
   mixins: [ReactRouter.History],
+
   componentDidMount: function(){
-    hljs.initHighlightingOnLoad();
+    // hljs.initHighlighting();
   },
 
-  handleClick: function(e){
+  componentWillUnmount: function () {
+  },
+
+  handleCodeClick: function(e){
     e.preventDefault();
     this.history.pushState(null, "edit/" + this.props.snippet.id);
+  },
+
+  handleLikeClick: function(e){
+    e.preventDefault();
+    var snippet_id = this.props.snippet.id;
+    ApiUtil.likeSnippet(snippet_id);
+  },
+
+  handleUnlikeClick: function(e){
+    e.preventDefault();
+    var like_id = this.props.snippet.likeid;
+    ApiUtil.unlikeSnippet(like_id);
+  },
+
+  highlight: function (node) {
+    if (node){
+      hljs.highlightBlock(node.getDOMNode());
+    }
   },
 
   render: function (){
@@ -15,26 +37,36 @@ var SnippetItem = React.createClass({
     var body = this.props.snippet.body;
     var author = this.props.snippet.author;
     var likes = this.props.snippet.likes;
-    var liketext;
-    return (
+    var likebutton;
+    // debugger
+    if (this.props.snippet.likeid){
+        likebutton = (
+          <button onClick={this.handleUnlikeClick} className="btn btn-sm likebutton">test</button>
+        )
+    }
+    else{
+      likebutton = (
+        <button onClick={this.handleLikeClick} className="btn btn-sm likebutton" >
+          <span className="glyphicon glyphicon-heart" aria-hidden="true"> Like me!&nbsp;</span>
+          <span className="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        </button>
+      )
+    }
 
+
+    return (
           <div className="col-md-6">
             <div className="totalsnippet row-fluid">
-              <div onClick={this.handleClick} className="snippetitemwrapper col-md-6 browseitem">
-                <pre><code className="js">{body}</code></pre>
+              <div onClick={this.handleCodeClick} className="snippetitemwrapper col-md-7">
+                <pre><code ref={this.highlight}>{body}</code></pre>
               </div>
-              <div className="col-md-5">
-                <br></br>
+              <div className="col-md-5 snippetcredentials">
                 <span>Name: {title}</span>
                 <br></br>
                 <span>Written By: {author}</span>
                 <br></br>
                 <span>Likes: {likes}</span>
-                <br></br>
-                <button className="btn btn-sm likebutton" >
-                  <span className="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                </button>
-                <span>{liketext}</span>
+                {likebutton}
               </div>
             </div>
           </div>

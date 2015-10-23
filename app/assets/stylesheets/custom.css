@@ -13,20 +13,50 @@ body	{
  .totalsnippet {
    height: 200px !important;
    margin: 10px;
-   background-color: blue;
+   background-color: #333;
+   border-radius: 5px;
+   border: 2px solid orange;
+   padding: 10px;
  }
 
 /*div that wraps the code body of the snippet*/
  .snippetitemwrapper {
    background-color: red;
-   border: 5px solid red;
+   /*border: 50px solid red;*/
+   height: 100%;
+   padding: 0;
+   margin: 0;
+ }
+
+ pre {
+   padding: 0;
+   height: 100%;
+   margin: 0;
+ }
+
+ code {
    height: 100%;
    padding: 0;
  }
 
+ .snippetcredentials {
+   color: white;
+   height: 100%;
+   padding: 10px;
+ }
+
  .likebutton {
-   margin: 0;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   margin: 10px;
    padding: 5px 3px;
+   color: black;
+   background-color: #888;
+ }
+
+ .likebutton:hover {
+   color: orange;
  }
 
 #saveerrors {
@@ -86,10 +116,7 @@ body	{
   padding: 10px;
 }
 
-.js {
-  max-height: 50px;
-  padding: 0;
-}
+
 
 /*#interpreter_area {
   background-color: #cc0;

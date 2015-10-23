@@ -35,5 +35,17 @@ ApiActions = {
       actionType: SnippetConstants.USER_LOGGED_OUT,
       username: ""
     });
+  },
+  handleAddedLike: function(like){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.ADDED_LIKE,
+      like: like
+    });
+  },
+  handleUnlike: function(like){
+    AppDispatcher.dispatch({
+      actionType: SnippetConstants.REMOVED_LIKE,
+      like: like
+    });
   }
 };

@@ -1,6 +1,7 @@
 TA Material:
-- Keep text value in hidden box (is working but feels hacky)
-- error handling in the stores - is this a good way?
+- Likes Store - Add likes to snippet store, make like store, or some other way
+- Code Highlighting only works when empty cache and hard reload is used
+- Error handling in the stores - is this a good way?
 - General security (before_action & auth token)
 - Am using session and users without having them in Api folder - bad practice?
 
