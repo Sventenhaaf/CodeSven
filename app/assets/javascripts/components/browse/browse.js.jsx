@@ -44,7 +44,7 @@ var SnippetBrowse = React.createClass({
           className="form-control"
           value={this.state.searchString}
           onChange={this.handleChange} placeholder="Search Snippet Titles" />
-        <ul>
+        <ul className="browseul">
           {snippets.map(function(snippet){
             return <SnippetItem key={snippet.id} snippet={snippet} />
           }.bind(this))}

@@ -2,6 +2,7 @@ TA Material:
 - Keep text value in hidden box (is working but feels hacky)
 - error handling in the stores - is this a good way?
 - General security (before_action & auth token)
+- Am using session and users without having them in Api folder - bad practice?
 
 Todo now:
 - add likes (model, controller, Jbuilder, view - like button and show total likes)

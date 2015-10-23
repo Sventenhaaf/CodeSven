@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :show, :create, :destroy]
   namespace :api, defaults: {format: :json} do
     resources :snippets, only: [:create, :destroy, :index, :show, :update]
+    resources :likes, only: [:new, :create, :destroy]
   end
 end
