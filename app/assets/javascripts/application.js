@@ -30,5 +30,5 @@
 //= require reactrouter.min.js
 //= require codesven
 //= require components
-//= require run_prettify.js
+//= require hl
 //= require_tree .
