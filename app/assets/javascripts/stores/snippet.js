@@ -4,6 +4,7 @@
 
   var _snippets = [];
   var _errors = [];
+  var _latestlikeid;
 
   var resetSnippets = function(snippets){
     _snippets = snippets.slice(0);
@@ -30,7 +31,17 @@
         _snippets[i].likes += 1;
       }
     }
+    _latestlikeid = [like.id, like.snippet_id];
   };
+
+  var removeLike = function(like){
+    var userid = like.user_id;
+    for (var i = 0; i < _snippets.length; i++) {
+      if (_snippets[i].id === like.snippet_id){
+        _snippets[i].likes -= 1;
+      }
+    }
+  }
 
   root.SnippetStore = $.extend({}, EventEmitter.prototype, {
     all: function(){
@@ -38,6 +49,9 @@
     },
     allErrors: function(){
       return _errors.slice(0);
+    },
+    latest: function(){
+      return _latestlikeid;
     },
 
     addChangeListener: function(callback){
@@ -66,6 +80,10 @@
           break;
         case SnippetConstants.ADDED_LIKE:
           addLike(payload.like);
+          SnippetStore.emit(SNIPPETS_CHANGE_EVENT);
+          break;
+        case SnippetConstants.REMOVED_LIKE:
+          removeLike(payload.like);
           SnippetStore.emit(SNIPPETS_CHANGE_EVENT);
           break;
       }

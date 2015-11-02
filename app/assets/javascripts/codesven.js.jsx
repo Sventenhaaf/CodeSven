@@ -15,7 +15,7 @@
 
     toggleView: function(event){
       event.preventDefault();
-      var toggle = this.props.location.pathname === "/browse" ? "create" : "browse";
+      var toggle = this.props.location.pathname === "/create" ? "browse" : "create";
       this.props.history.pushState(null, toggle);
       this.setState({ view: toggle });
       this.browseCreateButton();
@@ -112,7 +112,7 @@ function startCodeSven(){
           <Route path="create" component={SnippetCreate}>
             <Route path="save" component={TitleInput} />
           </Route>
-          <Route path="browse" component={SnippetBrowse} />
+          <Route path="browse" component={SnippetBrowse}/>
           <Route path="edit/:snippetId" component={SnippetCreate} />
       </Route>
     </Router>
