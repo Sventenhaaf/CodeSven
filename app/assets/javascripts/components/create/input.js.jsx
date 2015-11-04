@@ -5,7 +5,7 @@ var TitleInput = React.createClass({
 
   _onChange: function () {
     if (SnippetStore.allErrors()[0] === "Success"){ this.props.clicked(); }
-    this.setState({ errors: SnippetStore.allErrors() });
+    this.setState({ errors: SnippetStore.allErrors(), });
   },
 
   handleSave: function(e){
@@ -29,7 +29,7 @@ var TitleInput = React.createClass({
   render: function(){
     return (
       <form>
-        <label id="saveerrors" for="snippetTitle">{this.state.errors}</label>
+        <label id="saveerrors" htmlFor="snippetTitle">{this.state.errors}</label>
         <input id="snippetTitle" type="text" className="form-control" placeholder="Snippet Title"></input>
         <button onClick={this.handleCancel} type="submit" className="btn btn-default btn-sm">
           <span className="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Cancel</button>

@@ -90,4 +90,5 @@
     })
 
   });
+  SnippetStore.setMaxListeners(1000);
 })(this);

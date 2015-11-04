@@ -29,13 +29,16 @@ var TotalCreate = React.createClass({
     this.setState({codestring: letter});
   },
 
+  textareaChange: function(){
+  },
+
   saveCode: function(e){
     e.preventDefault();
+    // change this and set to state
     var codeBody = document.getElementById("totalcodemirror").value;
     this.setState({
       codeBody: codeBody,
       showTitleField: true});
-    console.log(document.getElementById("totalcodemirror").value);
   },
 
   clearResult: function(e){
@@ -68,7 +71,7 @@ var TotalCreate = React.createClass({
 
     return (
       <div className="row">
-        <form id="interpreter_form" autocomplete="off">
+        <form id="interpreter_form" autoComplete="off">
           <div className="col-md-6">
             <div className="row">
               <div className="col-md-1" id="totalleftmost"></div>
@@ -81,8 +84,8 @@ var TotalCreate = React.createClass({
                   <span className="glyphicon glyphicon-save" aria-hidden="true"></span> Save code
                 </button>
                 {titleInputField}
-                <textarea id="totalcodemirror" ref="cminput">{this.state.codestring}</textarea>
-                  <textarea id="interpreter_textarea" name="input_textarea" type="text" className="textbox form-control" rows="0" value={this.state.codestring}>
+                <textarea id="totalcodemirror" onChange={this.textareaChange} ref="cminput" value={this.state.codestring}></textarea>
+                  <textarea id="interpreter_textarea" onChange={this.textareaChange} name="input_textarea" type="text" className="textbox form-control" rows="0" value={this.state.codestring}>
                   </textarea>
                 </div>
                 <div className="col-md-1" id="midleftmost"></div>
