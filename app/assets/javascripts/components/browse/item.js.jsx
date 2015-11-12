@@ -25,7 +25,6 @@ var SnippetItem = React.createClass({
     var snippet_id = this.props.snippet.id;
     ApiUtil.likeSnippet(snippet_id);
     this.setState({liked:true});
-    console.log(this.props.snippet.likeid);
   },
 
   handleUnlikeClick: function(e){
